@@ -68,7 +68,7 @@ nav ul li a:hover {
 .hero {
     margin-top: 80px;
     height: 80vh;
-    background-image: url('/api/placeholder/1200/800');
+    background-image: url('images/hero/Dorpsbeeld_Williston (1).jpg');
     background-size: cover;
     background-position: center;
     display: flex;
