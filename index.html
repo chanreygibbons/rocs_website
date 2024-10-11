@@ -6,259 +6,145 @@
     <meta name="description" content="ROCS (Rural Outreach Community Services) - Empowering communities through education, food security, and development in Williston, South Africa">
     <title>ROCS - Rural Outreach Community Services</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        /* Reset and Base Styles */
-        :root {
-            --primary-color: #2C5F2D;
-            --secondary-color: #1E88E5;
-            --text-color: #333;
-            --light-bg: #f9f9f9;
-            --white: #ffffff;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Header Styles */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: var(--transition);
-            padding: 0.5rem 1rem;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        .btn {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .btn:hover {
-            background: #234C24;
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 80px;
-            height: 90vh;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            position: relative;
-        }
-
-        .hero-community {
-            background-image: url('/api/placeholder/1920/1080');
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Programs Section */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .program-card {
-            background: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: var(--transition);
-        }
-
-        .program-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .program-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .program-content {
-            padding: 1.5rem;
-        }
-
-        .program-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 5rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-        }
-
-        /* Footer Styles */
-        footer {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 4rem 0;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            color: var(--white);
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Form Styles */
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                padding: 1rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-                margin-top: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .programs-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <!-- The rest of the HTML structure remains the same, but replacing image sources with placeholder API -->
-    <!-- For example: -->
-    <img src="/api/placeholder/400/300" alt="Community members gathering">
-    
-    <!-- Continue with the rest of the HTML structure... -->
+    <!-- Header remains the same -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">ROCS</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#donate" class="btn">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Updated hero section with new background image class -->
+        <section class="hero hero-community" id="home">
+            <div class="hero-content">
+                <h1>Empowering Rural Communities</h1>
+                <p>Building stronger communities through education, food security, and sustainable development in Williston, South Africa.</p>
+                <a href="#donate" class="btn">Make a Difference Today</a>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container">
+                <h2 class="section-title">About ROCS</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="images/hero/rocs-community-center.jpg" alt="Community members gathering outside ROCS community center on a cloudy day">
+                    </div>
+                    <p>ROCS (Rural Outreach Community Services) is dedicated to transforming lives in Williston and the broader Northern Cape through sustainable community development initiatives.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="programs">
+            <div class="container">
+                <h2 class="section-title">Our Programs</h2>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <img src="images/programs/education.jpg" alt="ROCS education program in action - students engaged in learning">
+                        <div class="program-content">
+                            <h3>Education</h3>
+                            <p>Providing quality education and skills development to empower our youth.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <img src="images/programs/food-security.jpg" alt="Community members working in ROCS food garden">
+                        <div class="program-content">
+                            <h3>Food Security</h3>
+                            <p>Ensuring sustainable food sources through community gardens and agriculture programs.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <img src="images/programs/community-dev.jpg" alt="ROCS community development project">
+                        <div class="program-content">
+                            <h3>Community Development</h3>
+                            <p>Building infrastructure and fostering sustainable community growth.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rest of the sections remain the same -->
+        <section class="section testimonials">
+            <div class="container">
+                <h2 class="section-title">Success Stories</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p>"ROCS helped me complete my education and start my own business. They've transformed not just my life, but our entire community."</p>
+                        <strong>- Sarah M., Local Entrepreneur</strong>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"The community garden initiative has brought food security and unity to our neighborhood. We're grateful for ROCS's support."</p>
+                        <strong>- John D., Community Leader</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donate section remains the same -->
+        <section class="section" id="donate">
+            <div class="container">
+                <h2 class="section-title">Make a Difference</h2>
+                <form id="donateForm" class="donate-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Donation Amount (ZAR)" required>
+                    </div>
+                    <button type="submit" class="btn">Donate Now</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Contact Us</h3>
+                    <p>123 Main Street<br>Williston, Northern Cape<br>South Africa</p>
+                    <p>Email: info@rocs.org<br>Phone: +27 12 345 6789</p>
+                </div>
+                <div>
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Newsletter</h3>
+                    <form id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" placeholder="Enter your email" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
