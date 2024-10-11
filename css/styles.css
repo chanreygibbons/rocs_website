@@ -80,7 +80,7 @@ nav ul li a:hover {
 
 /* New specific hero class for the community image */
 .hero-community {
-    background-image: url('../images/hero/rocs-community-center.jpg');
+    background-image: url('images/hero/hero-community-main.jpg');
 }
 
 .hero::before {
