@@ -242,6 +242,13 @@ input, textarea {
     nav ul {
         margin-top: 1rem;
         align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 1rem;
     }
 
     .hero h1 {
@@ -258,6 +265,24 @@ input, textarea {
 }
 
 @media (max-width: 480px) {
+    .nav-container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
     .hero h1 {
         font-size: 1.5rem;
     }
@@ -268,6 +293,7 @@ input, textarea {
 
     .btn {
         padding: 0.5rem 1rem;
+        font-size: 0.9rem;
     }
 
     .section {
@@ -276,5 +302,9 @@ input, textarea {
 
     .section-title {
         font-size: 1.5rem;
+    }
+
+    .program-card img {
+        height: auto;
     }
 }
