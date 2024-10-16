@@ -25,7 +25,7 @@ header {
     top: 0;
     width: 100%;
     background: var(--white);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
@@ -36,19 +36,20 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 30px 0 30px 0;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
-    margin: 30px 0 30px 0;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    align-items: center; /* Ensures all list items, including the button, are vertically centered */
+    margin: 0; /* Ensure no extra margin around the nav */
+    padding: 0;
 }
 
 nav ul li {
@@ -60,6 +61,16 @@ nav ul li a {
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s ease;
+}
+
+/* Donate Button Styles */
+.btn-donate {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 1rem; /* Add some margin between the button and the nav links */
 }
 
 nav ul li a:hover {
