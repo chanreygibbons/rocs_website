@@ -47,8 +47,8 @@ header {
 nav ul {
     display: flex;
     list-style: none;
-    align-items: center; /* Ensures all list items, including the button, are vertically centered */
-    margin: 0; /* Ensure no extra margin around the nav */
+    align-items: center;
+    margin: 0;
     padding: 0;
 }
 
@@ -70,7 +70,7 @@ nav ul li a {
     color: var(--white);
     border-radius: 5px;
     text-decoration: none;
-    margin-left: 1rem; /* Add some margin between the button and the nav links */
+    margin-left: 1rem;
 }
 
 nav ul li a:hover {
@@ -213,22 +213,68 @@ input, textarea {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .nav-container {
         flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
         text-align: center;
     }
 
     nav ul {
         margin-top: 1rem;
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 0.5rem 0;
+        align-items: center;
     }
 
     .hero h1 {
         font-size: 2rem;
+    }
+
+    .hero {
+        height: 60vh;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
     }
 }
