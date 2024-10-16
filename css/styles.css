@@ -110,7 +110,7 @@ nav ul li a:hover {
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s ease;
-    margin-top: 20px;
+    margin: 30px 0 30px 0;;
 }
 
 .btn:hover {
