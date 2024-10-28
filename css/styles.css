@@ -45,7 +45,17 @@ header {
     color: var(--primary-color);
 }
 
-nav ul {
+nav {
+    position: relative;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-links {
     display: flex;
     list-style: none;
     align-items: center;
@@ -53,20 +63,50 @@ nav ul {
     padding: 0;
 }
 
-nav ul li {
+.nav-links li {
     margin-left: 2rem;
 }
 
-nav ul li a {
+.nav-links li a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
     transition: color var(--transition-speed) ease;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
     color: var(--secondary-color);
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: row;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        width: 200px;
+        height: 0;
+        overflow: hidden;
+        transition: height var(--transition-speed) ease;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .nav-links.expanded {
+        height: auto;
+    }
 }
 
 /* Donate Button Styles */
