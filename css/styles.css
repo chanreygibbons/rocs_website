@@ -108,6 +108,23 @@ nav {
         height: auto;
     }
 }
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        width: 200px;
+        height: 0;
+        overflow: hidden;
+        transition: height var(--transition-speed) ease;
+    }
+
+    .nav-links.expanded {
+        height: auto; /* Ensure this expands the menu */
+    }
+}
 
 /* Donate Button Styles */
 .btn-donate {
