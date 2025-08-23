@@ -180,5 +180,27 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <form name="PayFastPayNowForm" action="https://payment.payfast.io/eng/process" method="post">
+<input required type="hidden" name="cmd" value="_paynow">
+<input required type="hidden" name="receiver" pattern="[0-9]" value="15956853">
+<input type="hidden" name="return_url" value="https://rocs.org.za/index.html">
+<input type="hidden" name="cancel_url" value="https://rocs.org.za/index.html#about">
+<table>
+<tr>
+<td><label id="PayFastAmountLabel" for="PayFastAmount">Amount: </label></td>
+<td><input required id="PayFastAmount" type="number" step=".01" name="amount" min="50.00" placeholder="50.00" value="1000000"></td>
+</tr>
+</table>
+
+<input required type="hidden" name="item_name" maxlength="255" value="Donation">
+<input type="hidden" name="item_description" maxlength="255" value="Your donation is Empowering our Community Education Project and Food Security Initiatives ">
+<table>
+<tr>
+<td colspan=2 align=center>
+<input type="image" src="https://my.payfast.io/images/buttons/DonateNow/Light-Large-DonateNow.png" alt="Donate Now" title="Donate Now with Payfast">
+</td>
+</tr>
+</table>
+</form>
 </body>
 </html>
