@@ -44,7 +44,7 @@
                         <img src="images/hero/hero-community-main.jpg" alt="Community members gathering" loading="lazy">
                     </div>
                     <div class="about-text">
-                        <p>At ROCS (Recognize Obstacles Create Solutions), we believe in the power of community. Our mission is to create sustainable solutions in the areas of education, food security, and community development, helping the people of Williston and the Northern Cape thrive.</p>
+                        <p>At ROCS (Recognize Obstacles Create Solutions), we believe in the power of community. Our mission is to create sustainable solutions in the areas of education, food security[...]
                         <a href="#programs" class="btn">Explore Our Programs</a>
                     </div>
                 </div>
@@ -128,21 +128,36 @@
         <section class="section donation" id="donate">
             <div class="container">
                 <h2 class="section-title">Make a Difference</h2>
-                <form id="donateForm" class="donate-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Full Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email Address" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" placeholder="Donation Amount (ZAR)" required>
-                    </div>
-                    <button type="submit" class="btn">Donate Now</button>
-                </form>
+                <!-- PayFast form will be inserted above the footer, so nothing here -->
+                <p>You can donate to empower our Community Education Project and Food Security Initiatives. Scroll down to use our secure PayFast donation form.</p>
             </div>
         </section>
     </main>
+
+    <!-- PayFast Form placed directly above the footer -->
+    <section class="section payfast-donate" style="text-align:center;">
+        <div class="container">
+            <form name="PayFastPayNowForm" action="https://payment.payfast.io/eng/process" method="post" style="display:inline-block; max-width:400px; width:100%;">
+                <input required type="hidden" name="cmd" value="_paynow">
+                <input required type="hidden" name="receiver" pattern="[0-9]" value="15956853">
+                <input type="hidden" name="return_url" value="https://rocs.org.za/index.html">
+                <input type="hidden" name="cancel_url" value="https://rocs.org.za/index.html#about">
+                <input required type="hidden" name="item_name" maxlength="255" value="Donation">
+                <input type="hidden" name="item_description" maxlength="255" value="Your donation is Empowering our Community Education Project and Food Security Initiatives ">
+                <table style="margin:auto;">
+                    <tr>
+                        <td><label id="PayFastAmountLabel" for="PayFastAmount">Amount (ZAR): </label></td>
+                        <td><input required id="PayFastAmount" type="number" step=".01" name="amount" min="50.00" placeholder="50.00"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" style="padding-top:10px;">
+                            <input type="image" src="https://my.payfast.io/images/buttons/DonateNow/Light-Large-DonateNow.png" alt="Donate Now" title="Donate Now with Payfast">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
@@ -180,49 +195,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <form name="PayFastPayNowForm" action="https://payment.payfast.io/eng/process" method="post">
-<input required type="hidden" name="cmd" value="_paynow">
-<input required type="hidden" name="receiver" pattern="[0-9]" value="15956853">
-<input type="hidden" name="return_url" value="https://rocs.org.za/index.html">
-<input type="hidden" name="cancel_url" value="https://rocs.org.za/index.html#about">
-<table>
-<tr>
-<td><label id="PayFastAmountLabel" for="PayFastAmount">Amount: </label></td>
-<td><input required id="PayFastAmount" type="number" step=".01" name="amount" min="50.00" placeholder="50.00" value="1000000"></td>
-</tr>
-</table>
-
-<input required type="hidden" name="item_name" maxlength="255" value="Donation">
-<input type="hidden" name="item_description" maxlength="255" value="Your donation is Empowering our Community Education Project and Food Security Initiatives ">
-<table>
-<tr>
-<td colspan=2 align=center>
-<input type="image" src="https://my.payfast.io/images/buttons/DonateNow/Light-Large-DonateNow.png" alt="Donate Now" title="Donate Now with Payfast">
-</td>
-</tr>
-</table>
-        <form name="PayFastPayNowForm" action="https://payment.payfast.io/eng/process" method="post">
-<input required type="hidden" name="cmd" value="_paynow">
-<input required type="hidden" name="receiver" pattern="[0-9]" value="15956853">
-<input type="hidden" name="return_url" value="https://rocs.org.za/index.html">
-<input type="hidden" name="cancel_url" value="https://rocs.org.za/index.html#about">
-<table>
-<tr>
-<td><label id="PayFastAmountLabel" for="PayFastAmount">Amount: </label></td>
-<td><input required id="PayFastAmount" type="number" step=".01" name="amount" min="1000.00" placeholder="1000.00" value="1000000"></td>
-</tr>
-</table>
-
-<input required type="hidden" name="item_name" maxlength="255" value="Donation">
-<input type="hidden" name="item_description" maxlength="255" value="Your donation is Empowering our Community Education Project and Food Security Initiatives ">
-<table>
-<tr>
-<td colspan=2 align=center>
-<input type="image" src="https://my.payfast.io/images/buttons/DonateNow/Light-Large-DonateNow.png" alt="Donate Now" title="Donate Now with Payfast">
-</td>
-</tr>
-</table>
-</form>
-</form>
 </body>
 </html>
