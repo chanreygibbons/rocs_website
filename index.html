@@ -1,370 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ROCS (Recognize Obstacles Create Solutions) - Empowering communities through education, food security, and development in Williston, South Africa">
-  <title>ROCS - Recognize Obstacles Create Solutions</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Be The Difference Foundation</title>
   <style>
-    /* General Reset */
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      color: #333;
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
     header {
-      background: #fff;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      background: #004aad;
+      color: #fff;
+      padding: 1rem;
+      position: relative;
     }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0.5rem 1rem;
+    header .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #00695c;
-    }
-
-    nav {
-      position: relative;
-    }
-
-    .nav-links {
+    nav ul {
       display: flex;
-      gap: 1.5rem;
       list-style: none;
     }
-
-    .nav-links li a {
-      padding: 0.5rem;
-      transition: color 0.2s ease;
+    nav ul li {
+      margin-left: 1.5rem;
     }
-
-    .nav-links li a:hover {
-      color: #00695c;
-    }
-
-    .btn-donate {
-      background: #00695c;
+    nav ul li a {
       color: #fff;
-      padding: 0.4rem 0.8rem;
-      border-radius: 4px;
-    }
-
-    .btn-donate:hover {
-      background: #52FFB8;
-    }
-
-    .menu-icon {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #333;
-    }
-
-    /* Hero */
-    .hero {
-      background: url('images/hero/hero-community-main.jpg') center/cover no-repeat;
-      color: #fff;
-      text-align: center;
-      padding: 4rem 1rem;
-    }
-
-    .hero .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background: #00695c;
-      color: #fff;
-      border-radius: 4px;
-    }
-
-    .hero .btn:hover {
-      background: #004d40;
-    }
-
-    /* Sections */
-    .section {
-      padding: 3rem 1rem;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      color: #00695c;
-    }
-
-    /* Contact */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .btn {
-      background: #00695c;
-      color: #fff;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background: #004d40;
-    }
-
-    /* PayFast Donation Form */
-    .payfast-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      max-width: 400px;
-      margin: auto;
-    }
-
-    .payfast-form label {
+      text-decoration: none;
       font-weight: bold;
-      margin-bottom: 0.3rem;
-      color: #333;
     }
-
-    .payfast-form input[type="number"] {
-      width: 100%;
-      padding: 0.6rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1rem;
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
     }
-
-    .payfast-form input[type="image"] {
-      max-width: 180px;
-      height: auto;
-      border-radius: 6px;
-      transition: transform 0.2s ease;
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: #fff;
+      margin: 4px 0;
+      border-radius: 2px;
     }
-
-    .payfast-form input[type="image"]:hover {
-      transform: scale(1.05);
-    }
-
-    /* Footer */
-    footer {
-      background: #f8f8f8;
-      padding: 2rem 1rem;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .social-links a {
-      margin-right: 1rem;
-      font-size: 1.3rem;
-      color: #00695c;
-    }
-
-    .social-links a:hover {
-      color: #004d40;
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      .nav-links {
+      nav ul {
         display: none;
         flex-direction: column;
-        background: #fff;
+        background: #004aad;
         position: absolute;
         top: 60px;
         right: 0;
         width: 200px;
+        text-align: right;
         padding: 1rem;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
       }
-
-      .nav-links.active {
+      nav ul.show {
         display: flex;
       }
-
-      .menu-icon {
-        display: block;
+      .hamburger {
+        display: flex;
       }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+    }
+    /* Hero Section */
+    .hero {
+      background: url('hero-image.jpg') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    /* About Us */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+      align-items: center;
+    }
+    .about img {
+      flex: 1 1 300px;
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 1rem;
+    }
+    .about .text {
+      flex: 2 1 300px;
+      margin: 1rem;
+    }
+    /* Programs */
+    .programs {
+      padding: 2rem;
+      background: #f4f4f4;
+    }
+    .programs h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .programs .program-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .program {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      flex: 1 1 250px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    /* Donate Section */
+    .donate {
+      padding: 2rem;
+      text-align: center;
+    }
+    .donate button {
+      background: #e63946;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .donate button:hover {
+      background: #c62828;
+    }
+    footer {
+      background: #004aad;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="nav-container">
-      <div class="logo">ROCS</div>
+    <div class="container">
+      <h1>BTDF</h1>
       <nav>
-        <div class="menu-icon" aria-label="Toggle navigation" role="button" tabindex="0">
-          <i class="fas fa-bars"></i>
+        <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('show')">
+          <span></span><span></span><span></span>
         </div>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
+        <ul>
+          <li><a href="#about">About Us</a></li>
           <li><a href="#programs">Programs</a></li>
+          <li><a href="#donate">Donate</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#payfast" class="btn-donate">Donate</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <h1>Empowering Communities, Transforming Lives</h1>
-        <p>Together, we can uplift Williston and the broader Northern Cape through education, food security, and community development.</p>
-        <a href="#payfast" class="btn">Make a Difference Today</a>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Be The Difference Foundation</h1>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="about">
+    <img src="about-image.jpg" alt="About Us Image">
+    <div class="text">
+      <h2>About Us</h2>
+      <p>We are committed to making a difference in our community through sports development, education, and nutrition programs.</p>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section id="programs" class="programs">
+    <h2>Our Programs</h2>
+    <div class="program-list">
+      <div class="program">
+        <h3>Sport Development</h3>
+        <p>Building youth potential through sport.</p>
       </div>
-    </section>
-
-    <!-- About -->
-    <section class="section" id="about">
-      <div class="container">
-        <h2 class="section-title">About ROCS</h2>
-        <p>At ROCS (Recognize Obstacles Create Solutions), we believe in the power of community. Our mission is to create sustainable solutions in the areas of education, food security, and community development.</p>
+      <div class="program">
+        <h3>Nutrition</h3>
+        <p>Ensuring healthy meals for children in need.</p>
       </div>
-    </section>
-
-    <!-- Programs -->
-    <section class="section" id="programs">
-      <div class="container">
-        <h2 class="section-title">Our Programs</h2>
-        <p>Information about programs goes here...</p>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section contact" id="contact">
-      <div class="container">
-        <h2 class="section-title">Get Involved</h2>
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h3>Contact Information</h3>
-            <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Williston, Northern Cape</p>
-            <p><i class="fas fa-phone"></i> +27 76 711 3950</p>
-            <p><i class="fas fa-envelope"></i> info@rocs.org</p>
-          </div>
-          <form id="contactForm" class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- PayFast Donation -->
-    <section class="section payfast-donate" id="payfast">
-      <div class="container" style="text-align:center;">
-        <h2 class="section-title">Make a Difference</h2>
-        <form name="PayFastPayNowForm" action="https://payment.payfast.io/eng/process" method="post" class="payfast-form">
-          <input type="hidden" name="cmd" value="_paynow" required>
-          <input type="hidden" name="receiver" value="15956853" required>
-          <input type="hidden" name="return_url" value="https://rocs.org.za/index.html">
-          <input type="hidden" name="cancel_url" value="https://rocs.org.za/index.html#about">
-          <input type="hidden" name="item_name" value="Donation" required>
-          <input type="hidden" name="item_description" value="Your donation is Empowering our Community Education Project and Food Security Initiatives">
-
-          <label for="PayFastAmount">Amount (ZAR):</label>
-          <input id="PayFastAmount" type="number" step=".01" name="amount" min="50.00" placeholder="50.00" required>
-
-          <input type="image" src="https://my.payfast.io/images/buttons/DonateNow/Light-Large-DonateNow.png" alt="Donate Now with PayFast">
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h3>Contact Us</h3>
-          <p>123 Main Street<br>Williston, Northern Cape<br>South Africa</p>
-          <p>Email: info@rocs.org<br>Phone: +27 76 711 3950</p>
-        </div>
-        <div>
-          <h3>Follow Us</h3>
-          <div class="social-links">
-            <a href="https://www.facebook.com/groups/1025921248706671/" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-        </div>
-        <div>
-          <h3>Newsletter</h3>
-          <form id="newsletterForm">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit" class="btn">Subscribe</button>
-          </form>
-        </div>
+      <div class="program">
+        <h3>Education</h3>
+        <p>Providing support for learning and growth.</p>
       </div>
     </div>
+  </section>
+
+  <!-- Donate -->
+  <section id="donate" class="donate">
+    <h2>Support Us</h2>
+    <p>Your donation makes a difference.</p>
+    <form action="https://www.payfast.co.za/eng/process" method="post">
+      <!-- Payfast required inputs go here -->
+      <button type="submit">Donate Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Be The Difference Foundation</p>
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuIcon = document.querySelector(".menu-icon");
-      const navLinks = document.querySelector(".nav-links");
-
-      menuIcon.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
-
-      document.querySelectorAll(".nav-links a").forEach(link => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
-        });
-      });
-    });
+    // No extra JS needed beyond hamburger toggle above
   </script>
 </body>
 </html>
