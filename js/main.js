@@ -1,48 +1,32 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const menuIcon = document.querySelector('.menu-icon');
-    const navLinks = document.querySelector('.nav-links');
-    let isMenuOpen = false;
+document.addEventListener("DOMContentLoaded", () => {
+  const menuIcon = document.querySelector(".menu-icon");
+  const navLinks = document.querySelector(".nav-links");
 
-    menuIcon.addEventListener('click', function() {
-        isMenuOpen = !isMenuOpen;
-        
-        // Toggle menu open/close
-        if (isMenuOpen) {
-            navLinks.classList.add('active');
-            menuIcon.innerHTML = '<i class="fas fa-times"></i>'; // Change to X icon
-        } else {
-            navLinks.classList.remove('active');
-            menuIcon.innerHTML = '<i class="fas fa-bars"></i>'; // Change back to bars icon
-        }
+  if (menuIcon && navLinks) {
+    const toggleMenu = () => {
+      const isOpen = navLinks.classList.toggle("active");
+      menuIcon.setAttribute("aria-expanded", String(isOpen));
+    };
+
+    menuIcon.addEventListener("click", toggleMenu);
+    menuIcon.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleMenu();
+      }
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const isClickInsideMenu = navLinks.contains(event.target);
-        const isClickOnMenuIcon = menuIcon.contains(event.target);
-        
-        if (!isClickInsideMenu && !isClickOnMenuIcon && isMenuOpen) {
-            navLinks.classList.remove('active');
-            menuIcon.innerHTML = '<i class="fas fa-bars"></i>';
-            isMenuOpen = false;
-        }
-    });
+    // Close after clicking a link
+    navLinks.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => navLinks.classList.remove("active"))
+    );
 
-    // Close menu when clicking on a link
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            menuIcon.innerHTML = '<i class="fas fa-bars"></i>';
-            isMenuOpen = false;
-        });
+    // Close when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!navLinks.contains(e.target) && !menuIcon.contains(e.target)) {
+        navLinks.classList.remove("active");
+        menuIcon.setAttribute("aria-expanded", "false");
+      }
     });
-
-    // Handle window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && isMenuOpen) {
-            navLinks.classList.remove('active');
-            menuIcon.innerHTML = '<i class="fas fa-bars"></i>';
-            isMenuOpen = false;
-        }
-    });
+  }
 });
