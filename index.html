@@ -1,3 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ROCS (Recognize Obstacles Create Solutions) - Empowering communities through education, food security, and development in Williston, South Africa">
+    <title>ROCS - Recognize Obstacles Create Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">ROCS</div>
+            <nav>
+                <div class="menu-icon" aria-label="Toggle navigation" aria-expanded="false" role="button" tabindex="0">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <!-- CHANGED to #payfast -->
+                    <li><a href="#payfast" class="btn-donate">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO (unchanged) -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Empowering Communities, Transforming Lives</h1>
+                <p>Together, we can uplift Williston and the broader Northern Cape through education, food security, and community development.</p>
+                <!-- CHANGED to #payfast -->
+                <a href="#payfast" class="btn">Make a Difference Today</a>
+            </div>
+        </section>
+
+        <!-- ABOUT (unchanged, keeps image) -->
         <section class="section" id="about">
             <div class="container">
                 <h2 class="section-title">About ROCS</h2>
@@ -6,11 +48,165 @@
                         <img src="images/hero/hero-community-main.jpg" alt="Community members gathering" loading="lazy">
                     </div>
                     <div class="about-text">
-                        <p style="margin-bottom: 2em;">At ROCS (Recognize Obstacles Create Solutions), we believe in the power of community. Our mission is to create sustainable solutions in the areas of education, food security, and community development, helping the people of Williston and the Northern Cape thrive. By working together with passionate individuals and corporate partners, we aim to build a brighter future for everyone.</p>
-                        <div style="text-align: center;">
-                            <a href="#programs" class="btn">Explore Our Programs</a>
+                        <p>At ROCS (Recognize Obstacles Create Solutions), we believe in the power of community. Our mission is to create sustainable solutions in the areas of education, food security[...]
+                        <a href="#programs" class="btn">Explore Our Programs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRAMS (unchanged, keeps images) -->
+        <section class="section" id="programs">
+            <div class="container">
+                <h2 class="section-title">Our Programs</h2>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <img src="images/programs/education-program.jpg" alt="Education Program" loading="lazy">
+                        <div class="program-content">
+                            <h3>Education</h3>
+                            <p>Providing quality education and skills development to empower our youth.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <img src="images/programs/food-security.jpg" alt="Food Security Program" loading="lazy">
+                        <div class="program-content">
+                            <h3>Food Security</h3>
+                            <p>Ensuring sustainable food sources through community gardens and agriculture programs.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <img src="images/programs/community-dev.jpg" alt="Community Development" loading="lazy">
+                        <div class="program-content">
+                            <h3>Community Development</h3>
+                            <p>Building infrastructure and fostering sustainable community growth.</p>
+                            <a href="#" class="btn">Learn More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- TESTIMONIALS (unchanged) -->
+        <section class="section testimonials" id="testimonials">
+            <div class="container">
+                <h2 class="section-title">Success Stories</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p>"ROCS helped me complete my education and start my own business. They've transformed not just my life, but our entire community."</p>
+                        <strong>- Sarah M., Local Entrepreneur</strong>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"The community garden initiative has brought food security and unity to our neighborhood. We're grateful for ROCS's support."</p>
+                        <strong>- John D., Community Leader</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT (unchanged) -->
+        <section class="section contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">Get Involved</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Williston, Northern Cape</p>
+                        <p><i class="fas fa-phone"></i> +27 76 711 3950</p>
+                        <p><i class="fas fa-envelope"></i> info@rocs.org</p>
+                    </div>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- REMOVED the old custom #donate section -->
+
+    </main>
+
+    <!-- PAYFAST (now the only donate section) -->
+    <section class="section payfast-donate" id="payfast" style="text-align:center;">
+        <div class="container">
+            <form name="PayFastPayNowForm"
+                  action="https://payment.payfast.io/eng/process"
+                  method="post"
+                  class="payfast-form">
+                <input required type="hidden" name="cmd" value="_paynow">
+                <!-- kept your receiver value; removed invalid pattern attr -->
+                <input required type="hidden" name="receiver" value="15956853">
+                <input type="hidden" name="return_url" value="https://rocs.org.za/index.html">
+                <input type="hidden" name="cancel_url" value="https://rocs.org.za/index.html#about">
+                <input required type="hidden" name="item_name" maxlength="255" value="Donation">
+                <input type="hidden" name="item_description" maxlength="255" value="Your donation is Empowering our Community Education Project and Food Security Initiatives ">
+
+                <table class="payfast-table" style="margin:auto;">
+                    <tr>
+                        <td><label id="PayFastAmountLabel" for="PayFastAmount">Amount (ZAR): </label></td>
+                        <td>
+                            <input required id="PayFastAmount" type="number" step=".01" inputmode="decimal"
+                                   name="amount" min="50.00" placeholder="50.00">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" style="padding-top:10px;">
+                            <input type="image"
+                                   src="https://my.payfast.io/images/buttons/DonateNow/Light-Large-DonateNow.png"
+                                   alt="Donate Now" title="Donate Now with Payfast">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Contact Us</h3>
+                    <p>123 Main Street<br>Williston, Northern Cape<br>South Africa</p>
+                    <p>Email: info@rocs.org<br>Phone: +27 76 711 3950</p>
+                </div>
+                <div>
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/groups/1025921248706671/" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Newsletter</h3>
+                    <form id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" placeholder="Enter your email" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- REPLACED js/main.js: see file content below -->
+    <script src="js/main.js"></script>
+</body>
+</html>
