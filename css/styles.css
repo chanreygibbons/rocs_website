@@ -256,3 +256,68 @@ footer {
 }
 
 .social-
+/* ===== Mobile nav toggle ===== */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: inherit;
+  }
+
+  /* Ensure header is positioning context for dropdown */
+  header .nav-container { position: relative; }
+
+  /* Hide menu by default on mobile */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    width: min(240px, 90vw);
+    flex-direction: column;
+    background: #fff;
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    z-index: 1000;
+  }
+
+  .nav-links li { margin: 0; }
+  .nav-links a { display: block; padding: 0.75rem 1rem; }
+
+  /* Show when toggled */
+  .nav-links.active { display: flex; }
+}
+
+/* Keep desktop inline */
+@media (min-width: 769px) {
+  .menu-icon { display: none; }
+  .nav-links { display: flex; gap: 1.5rem; }
+}
+
+/* ===== PayFast button sizing & form polish ===== */
+.payfast-donate .payfast-form {
+  display: inline-block;
+  max-width: 420px;
+  width: 100%;
+  text-align: left;
+}
+
+.payfast-donate .payfast-table { width: 100%; }
+.payfast-donate .payfast-table td { padding: 6px; vertical-align: middle; }
+
+.payfast-donate input[type="number"] {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Scale the PayFast image button */
+.payfast-donate input[type="image"] {
+  max-width: 180px;   /* adjust if you want smaller/larger */
+  width: 100%;
+  height: auto;
+}
