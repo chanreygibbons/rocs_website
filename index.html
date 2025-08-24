@@ -6,7 +6,229 @@
   <meta name="description" content="ROCS (Recognize Obstacles Create Solutions) - Empowering communities through education, food security, and development in Williston, South Africa">
   <title>ROCS - Recognize Obstacles Create Solutions</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+
+  <style>
+    /* General Reset */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00695c;
+    }
+
+    nav {
+      position: relative;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links li a {
+      padding: 0.5rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #00695c;
+    }
+
+    .btn-donate {
+      background: #00695c;
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+    }
+
+    .btn-donate:hover {
+      background: #004d40;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Hero */
+    .hero {
+      background: url('images/hero/hero-community-main.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .hero .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #00695c;
+      color: #fff;
+      border-radius: 4px;
+    }
+
+    .hero .btn:hover {
+      background: #004d40;
+    }
+
+    /* Sections */
+    .section {
+      padding: 3rem 1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #00695c;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .btn {
+      background: #00695c;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #004d40;
+    }
+
+    /* PayFast Donation Form */
+    .payfast-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .payfast-form label {
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+      color: #333;
+    }
+
+    .payfast-form input[type="number"] {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .payfast-form input[type="image"] {
+      max-width: 180px;
+      height: auto;
+      border-radius: 6px;
+      transition: transform 0.2s ease;
+    }
+
+    .payfast-form input[type="image"]:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: #f8f8f8;
+      padding: 2rem 1rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .social-links a {
+      margin-right: 1rem;
+      font-size: 1.3rem;
+      color: #00695c;
+    }
+
+    .social-links a:hover {
+      color: #004d40;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -41,15 +263,7 @@
     <section class="section" id="about">
       <div class="container">
         <h2 class="section-title">About ROCS</h2>
-        <div class="about-content">
-          <div class="about-image">
-            <img src="images/hero/hero-community-main.jpg" alt="Community members gathering" loading="lazy">
-          </div>
-          <div class="about-text">
-            <p>At ROCS (Recognize Obstacles Create Solutions), we believe in the power of community. Our mission is to create sustainable solutions in the areas of education, food security, and community development.</p>
-            <a href="#programs" class="btn">Explore Our Programs</a>
-          </div>
-        </div>
+        <p>At ROCS (Recognize Obstacles Create Solutions), we believe in the power of community. Our mission is to create sustainable solutions in the areas of education, food security, and community development.</p>
       </div>
     </section>
 
@@ -57,49 +271,7 @@
     <section class="section" id="programs">
       <div class="container">
         <h2 class="section-title">Our Programs</h2>
-        <div class="programs-grid">
-          <div class="program-card">
-            <img src="images/programs/education-program.jpg" alt="Education Program" loading="lazy">
-            <div class="program-content">
-              <h3>Education</h3>
-              <p>Providing quality education and skills development to empower our youth.</p>
-              <a href="#" class="btn">Learn More</a>
-            </div>
-          </div>
-          <div class="program-card">
-            <img src="images/programs/food-security.jpg" alt="Food Security Program" loading="lazy">
-            <div class="program-content">
-              <h3>Food Security</h3>
-              <p>Ensuring sustainable food sources through community gardens and agriculture programs.</p>
-              <a href="#" class="btn">Learn More</a>
-            </div>
-          </div>
-          <div class="program-card">
-            <img src="images/programs/community-dev.jpg" alt="Community Development" loading="lazy">
-            <div class="program-content">
-              <h3>Community Development</h3>
-              <p>Building infrastructure and fostering sustainable community growth.</p>
-              <a href="#" class="btn">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section testimonials" id="testimonials">
-      <div class="container">
-        <h2 class="section-title">Success Stories</h2>
-        <div class="testimonial-grid">
-          <div class="testimonial-card">
-            <p>"ROCS helped me complete my education and start my own business. They've transformed not just my life, but our entire community."</p>
-            <strong>- Sarah M., Local Entrepreneur</strong>
-          </div>
-          <div class="testimonial-card">
-            <p>"The community garden initiative has brought food security and unity to our neighborhood. We're grateful for ROCS's support."</p>
-            <strong>- John D., Community Leader</strong>
-          </div>
-        </div>
+        <p>Information about programs goes here...</p>
       </div>
     </section>
 
@@ -115,15 +287,9 @@
             <p><i class="fas fa-envelope"></i> info@rocs.org</p>
           </div>
           <form id="contactForm" class="contact-form">
-            <div class="form-group">
-              <input type="text" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-              <textarea placeholder="Your Message" required></textarea>
-            </div>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
             <button type="submit" class="btn">Send Message</button>
           </form>
         </div>
@@ -145,9 +311,7 @@
           <label for="PayFastAmount">Amount (ZAR):</label>
           <input id="PayFastAmount" type="number" step=".01" name="amount" min="50.00" placeholder="50.00" required>
 
-          <div class="donate-button">
-            <input type="image" src="https://my.payfast.io/images/buttons/DonateNow/Light-Large-DonateNow.png" alt="Donate Now with PayFast">
-          </div>
+          <input type="image" src="https://my.payfast.io/images/buttons/DonateNow/Light-Large-DonateNow.png" alt="Donate Now with PayFast">
         </form>
       </div>
     </section>
@@ -178,9 +342,7 @@
         <div>
           <h3>Newsletter</h3>
           <form id="newsletterForm">
-            <div class="form-group">
-              <input type="email" placeholder="Enter your email" required>
-            </div>
+            <input type="email" placeholder="Enter your email" required>
             <button type="submit" class="btn">Subscribe</button>
           </form>
         </div>
